@@ -14,13 +14,13 @@ const Skills = () => {
       p:"Sept'20 - Present",
     },
     {
-      h1:"Hindu VidhyaPeeth",
+      h1:"Bhagwati Mandir College, Barari, Katihar ",
       h2:"Senior Secondary School, Science",
       p:"Apr'2020 - May'21",
     },
     {
-      h1:"Hindu VidhyaPeeth",
-      h2:"Secondary School, Science",
+      h1:"+2 Gurunanak Girls High School Gurubazar",
+      h2:"Secondary School",
       p:"Apr'18 - May'19",
     }
   ];
@@ -43,10 +43,14 @@ const Skills = () => {
     <section id="skills">
       <h1 className="aboutMeHeading">About Me</h1>
       <p className="aboutMePara">
-        I am a software engineer with a passion for building and designing
-        applications. I am currently a senior at the University of California,
-        Irvine studying Computer Science. I have experience working with
-        JavaScript, React, Node.js, Express, MongoDB, Python, Java, and C++.
+        In pursuit of a career as a software engineer, I
+        bring a formidable command of diverse
+        programming languages and a well-documented
+        history of adept problem-solving. My unwavering
+        commitment to continual self-improvement is
+        matched only by my fervent enthusiasm for
+        crafting pioneering software solutions I have experience working with
+        JavaScript, React, HTML, CSS, Tailwind, and Java.
       </p>
       <div className="SelectButtonContainer">
         <button
@@ -75,7 +79,7 @@ const Skills = () => {
            <Bar className="chart"
           data={{
             //  change these label sizw 
-            labels: ["JavaScript", "React", "Node.js", "Express", "MongoDB"],
+            labels: ["JavaScript", "React", "Java", "HTML", "CSS"],
             datasets: [
               {
                 label: "Proficiency",

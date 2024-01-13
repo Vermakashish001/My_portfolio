@@ -8,15 +8,16 @@
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 .bg{
     position: absolute;
-    top: -4rem;
-    right: 0;
+    top: 4rem;
+    right: 2rem;
     z-index: -1;
     object-fit: cover;
-    height: 100vh;
+    height: 60vh;
 }
 
 .introContent{
@@ -69,6 +70,12 @@
 }
 @media screen and (max-width: 480px) {
     .bg{
-        right: -20vw;
+        right: -10vw;
+        top: -0.35vw;
+        opacity: 0.7;
     } 
+    .introPara{
+        color: #454545;
+        font-weight: 300;
+    }
 }

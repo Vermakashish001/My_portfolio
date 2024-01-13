@@ -45,7 +45,9 @@
     border-radius: 2rem;
     background-color: white;
     font-size: 1rem;
+    
 }
+
 @media screen and (max-width: 585px) {
     #works{
         padding: 2rem 1rem;
