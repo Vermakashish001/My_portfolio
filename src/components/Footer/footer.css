@@ -1,0 +1,17 @@
+.footer{
+    width: 100vw;
+    height: 4rem;
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 300;
+    font-size: small;
+}
+@media screen and (max-width: 585px) {
+    .footer{
+        height: 2.5rem;
+        font-size: small;
+    }
+}

@@ -1,0 +1,133 @@
+:root {
+    --blue: #1e90ff;
+  }
+.navbar{
+    height: 5rem;
+    width: 100vw;
+    margin: 75rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: rgb(30, 30, 30);
+}
+.logo{
+    object-fit: cover;
+    height: 3rem;
+    width:15rem;
+}
+
+.desktopMenuListItem{
+    margin: 1rem;
+    cursor: pointer;
+}
+.desktopMenuListItem:hover{
+    color: var(--blue);
+    padding-bottom: 0.3rem;
+    border-bottom: 3px solid var(--blue);
+}
+.desktopMenuImg{
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    margin: 0.5rem;
+}
+.desktopMenuBtn{
+    border: none;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:  0 1rem;
+    border-radius: 2rem;
+}
+.active-link{
+    color: var(--blue);
+    padding-bottom: 0.3rem;
+    border-bottom: 3px solid var(--blue);
+}
+
+.mobMenu{
+    display: none;
+    object-fit: cover;
+    height: 2rem;
+}
+.navMenu{
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: fit-content;
+    min-width: 15rem;
+    background: rgb(40, 40, 40);
+    border-radius: 1rem;
+}
+.ListItem{
+    color: white;
+    padding: 0.5rem 3rem;
+    margin: 0.25rem;
+    background: rgb(30, 30, 30);
+    border-radius: 0.4rem;
+    border-bottom-width: 50%;
+}
+
+@media screen and (max-width: 720px) {
+    .desktopMenu{
+        display: none;
+    }
+    .mobMenu{
+        display: flex;
+    }
+    .desktopMenuBtn{
+        display: none;
+    }
+    .mobMenuListItem{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+        color: white;
+        border-bottom: 1px solid white;
+    }
+    .mobMenuListItem:hover{
+        color: var(--blue);
+        border-bottom: 1px solid var(--blue);
+    }
+    .mobMenuImg{
+        height: 2rem;
+        width: 2rem;
+        object-fit: cover;
+        margin: 0.5rem;
+    }
+    .mobMenuBtn{
+        border: none;
+        background: white;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:  0 1rem;
+        border-radius: 2rem;
+    }
+    .active-link{
+        color: var(--blue);
+        border-bottom: 1px solid var(--blue);
+    }
+    .navMenu{
+        top: 5rem;
+        right: 1rem;
+    }
+    .ListItem{
+        padding: 0.5rem 1rem;
+        margin: 0.25rem;
+    }
+}
