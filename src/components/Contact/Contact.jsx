@@ -48,10 +48,14 @@ const Contact = () => {
           Send
         </button>
         <div className="links">
-          <img href="https://www.instagram.com/vermakashish001/" src={facebook} alt="Facebook" className="link" />
-          <img src={twitter} alt="Twitter" srcset="" className="link" />
-          <img src={linkedin} alt="LinkedIn" srcset="" className="link" />
-          <img src={instagram} alt="Instagram" srcset="" className="link" />
+          <a href ="https://www.facebook.com/profile.php?id=100084856876898&mibextid=ZbWKwL" target ="_blank">
+          <img src={facebook} alt="Facebook" className="link" /></a>
+          <a href ="https://twitter.com/kashishver001" target ="_blank">
+          <img src={twitter} alt="Twitter" srcset="" className="link" /></a>
+          <a href ="https://www.linkedin.com/in/vermakashish001/" target ="_blank">
+          <img src={linkedin} alt="LinkedIn" srcset="" className="link" /></a>
+          <a href ="https://www.instagram.com/vermakashish001/" target ="_blank">
+          <img src={instagram} alt="Instagram" srcset="" className="link" /></a>
         </div>
       </form>
     </section>
