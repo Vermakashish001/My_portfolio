@@ -79,11 +79,11 @@ const Skills = () => {
            <Bar className="chart"
           data={{
             //  change these label sizw 
-            labels: ["JavaScript", "React", "Java", "HTML", "CSS"],
+            labels: ["JavaScript", "React", "HTML", "Java", "CSS", "Tailwind", "Next.js"],
             datasets: [
               {
                 label: "Proficiency",
-                data: [90, 80, 70, 60, 50],
+                data: [90, 80, 85, 60, 50 , 60, 40],
                 backgroundColor: [
                   'rgba(255, 99, 132, 0.4)',
                   'rgba(255, 159, 64, 0.4)',
