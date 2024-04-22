@@ -36,6 +36,9 @@
 }
 .introName{
     color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'poppins';
 }
 .introPara{
     font-size: medium;
@@ -52,14 +55,14 @@
 }
 .btnImg{
     object-fit: cover;
-    
+
     margin: 0 0.25rem;
     height: 1.5rem;
 }
 
 @media screen and (max-width: 840px) {
     .bg{
-        right: -10vw;
+        display: none;
     }
     .introContent{
         font-size: 10vw;
@@ -67,20 +70,12 @@
     .hello{
         font-size: 5vw;
     }
-    .btnImg{
-        display: none;
-    }
 
 }
 @media screen and (max-width: 480px) {
     .bg{
-        right: -10vw;
-        top: -0.35vw;
-        opacity: 0.7;
-    } 
-    .btnImg{
         display: none;
-    }
+    } 
     .introPara{
         color: #454545;
         font-weight: 300;
