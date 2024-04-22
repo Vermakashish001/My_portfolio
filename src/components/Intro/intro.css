@@ -74,6 +74,9 @@
         top: -0.35vw;
         opacity: 0.7;
     } 
+    .btnImg{
+        display: none;
+    }
     .introPara{
         color: #454545;
         font-weight: 300;
