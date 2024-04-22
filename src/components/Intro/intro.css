@@ -52,6 +52,7 @@
 }
 .btnImg{
     object-fit: cover;
+    
     margin: 0 0.25rem;
     height: 1.5rem;
 }
