@@ -51,14 +51,28 @@
 .links{
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
+
 .link{
-    object-fit: cover;
-    height:  2rem;
-    margin: 0 0.75rem;
-    transition: all 0.2s ease-in-out;
+    font-size: 2rem;
+
 }
 .link:hover{
     transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.link1{
+    color: #3b5998;
+}
+.link2{
+    color: #00acee;
+}
+.link3{
+    color: #00ace3;
+}
+.link4{
+    color: #dd394c;
 }

@@ -1,9 +1,9 @@
 import React,{useRef} from "react";
 import "./contact.css";
-import facebook from "../../assets/fb.png";
-import twitter from "../../assets/twitter-circle.png";
-import linkedin from "../../assets/linkedin.png";
-import instagram from "../../assets/insta.png";
+import {FaFacebook as Facebook} from "react-icons/fa";
+import {FaTwitter as Twitter} from "react-icons/fa";
+import {FaLinkedin as Linkedin} from "react-icons/fa";
+import {FaInstagram as Instagram} from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 const Contact = () => {
   const form = useRef();
@@ -49,13 +49,25 @@ const Contact = () => {
         </button>
         <div className="links">
           <a href ="https://www.facebook.com/profile.php?id=100084856876898&mibextid=ZbWKwL" target ="_blank">
-          <img src={facebook} alt="Facebook" className="link" /></a>
+          <Facebook
+          className="link link1"/>
+        </a>
           <a href ="https://twitter.com/kashishver001" target ="_blank">
-          <img src={twitter} alt="Twitter" srcset="" className="link" /></a>
+            <Twitter
+            className="link link2"
+            />
+          </a>
           <a href ="https://www.linkedin.com/in/vermakashish001/" target ="_blank">
-          <img src={linkedin} alt="LinkedIn" srcset="" className="link" /></a>
+            <Linkedin 
+            className="link link3"
+
+            icon="fa-brands fa-linkedin" />
+          </a>
           <a href ="https://www.instagram.com/vermakashish001/" target ="_blank">
-          <img src={instagram} alt="Instagram" srcset="" className="link" /></a>
+            <Instagram 
+            className="link link4"
+            />
+          </a>
         </div>
       </form>
     </section>
