@@ -11,7 +11,7 @@ const Skills = () => {
     {
       h1:"Lovely Professional University",
       h2:"Bachelor of Technology, Computer Science",
-      p:"Sept'20 - Present",
+      p:"Sept'21 - May'25",
     },
     {
       h1:"Bhagwati Mandir College, Barari, Katihar ",

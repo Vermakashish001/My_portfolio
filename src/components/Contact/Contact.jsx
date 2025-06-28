@@ -1,6 +1,6 @@
 import React,{useRef} from "react";
 import "./contact.css";
-import {FaFacebook as Facebook} from "react-icons/fa";
+import {FaGithub as Github} from "react-icons/fa";
 import {FaTwitter as Twitter} from "react-icons/fa";
 import {FaLinkedin as Linkedin} from "react-icons/fa";
 import {FaInstagram as Instagram} from "react-icons/fa";
@@ -48,8 +48,8 @@ const Contact = () => {
           Send
         </button>
         <div className="links">
-          <a href ="https://www.facebook.com/profile.php?id=100084856876898&mibextid=ZbWKwL" target ="_blank">
-          <Facebook
+          <a href ="https://github.com/Vermakashish001" target ="_blank">
+          <Github
           className="link link1"/>
         </a>
           <a href ="https://twitter.com/kashishver001" target ="_blank">
