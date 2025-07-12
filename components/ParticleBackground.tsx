@@ -37,79 +37,94 @@ const ParticleBackground = () => {
           events: {
             onClick: {
               enable: true,
-              mode: 'push',
+              mode: 'bubble',
             },
             onHover: {
               enable: true,
-              mode: 'grab',
+              mode: 'slow',
             },
             resize: true,
           },
           modes: {
-            push: {
-              quantity: 2,
-            },
-            grab: {
+            bubble: {
               distance: 200,
-              links: {
-                opacity: 0.6,
-                color: '#ffffff',
-              },
+              size: 60,
+              duration: 2,
+              opacity: 0.4,
+            },
+            slow: {
+              factor: 3,
+              radius: 200,
             },
           },
         },
         particles: {
           color: {
-            value: '#ffffff',
+            value: ['#1a1a1a', '#2a2a2a', '#3a3a3a', '#4a4a4a'],
           },
           links: {
-            enable: true,
-            distance: 150,
-            color: '#666666',
-            opacity: 0.25,
-            width: 1.5,
+            enable: false,
           },
           move: {
-            direction: 'none',
+            direction: 'top',
             enable: true,
             outModes: {
-              default: 'bounce',
+              default: 'out',
             },
-            random: false,
-            speed: 0.3,
+            random: true,
+            speed: 1,
             straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 1500,
             },
-            value: 100,
+            value: 40,
           },
           opacity: {
             value: {
-              min: 0.3,
-              max: 0.7,
-            },
-            animation: {
-              enable: true,
-              speed: 1,
-              minimumValue: 0.1,
-            },
-          },
-          shape: {
-            type: 'circle',
-          },
-          size: {
-            value: {
-              min: 1,
-              max: 3,
+              min: 0.1,
+              max: 0.4,
             },
             animation: {
               enable: true,
               speed: 2,
-              minimumValue: 0.5,
+              minimumValue: 0.05,
             },
+          },
+          shape: {
+            type: ['polygon', 'circle', 'triangle'],
+            options: {
+              polygon: {
+                sides: 6,
+              },
+            },
+          },
+          size: {
+            value: {
+              min: 20,
+              max: 60,
+            },
+            animation: {
+              enable: true,
+              speed: 3,
+              minimumValue: 10,
+            },
+          },
+          rotate: {
+            value: {
+              min: 0,
+              max: 360,
+            },
+            animation: {
+              enable: true,
+              speed: 2,
+            },
+          },
+          stroke: {
+            width: 1,
+            color: '#333333',
           },
         },
         detectRetina: true,
