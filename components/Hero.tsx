@@ -164,7 +164,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.8 }}
-                className="absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+                className="sm:bottom-10 sm:left-1/2 transform -translate-x-1/2 hidden sm:block sm:absolute "
             >
                 <motion.button
                 onClick={scrollToNext}
