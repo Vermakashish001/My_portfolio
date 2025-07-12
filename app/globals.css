@@ -21,8 +21,12 @@ html {
 
 body {
   font-family: var(--font-inter);
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: #000000;
+  background-image: 
+    radial-gradient(at 20% 80%, hsla(0, 0%, 10%, 0.5) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, hsla(0, 0%, 15%, 0.5) 0px, transparent 50%);
   min-height: 100vh;
+  color: #ffffff;
 }
 
 /* Custom scrollbar */
@@ -31,16 +35,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #0ea5e9, #d946ef);
+  background: linear-gradient(135deg, #333333, #666666);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #0284c7, #c026d3);
+  background: linear-gradient(135deg, #444444, #777777);
 }
 
 /* Animation classes */
@@ -50,34 +54,75 @@ body {
 }
 
 .glass-effect {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #0ea5e9, #d946ef, #f97316);
-  background-clip: text;
+  background: linear-gradient(135deg, #ffffff, #cccccc, #999999);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 200%;
   animation: gradient 3s ease infinite;
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  background: linear-gradient(135deg, #333333, #555555);
+  color: white;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #444444, #666666);
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
 }
 
 .btn-secondary {
-  @apply bg-transparent border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+  background: transparent;
+  border: 2px solid #666666;
+  color: #cccccc;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-secondary:hover {
+  background: #333333;
+  color: white;
+  border-color: #888888;
+  transform: scale(1.05);
 }
 
 .section-padding {
-  @apply py-20 px-4 sm:px-6 lg:px-8;
+  padding: 80px 16px;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 80px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 80px 32px;
+  }
 }
 
 .container-max {
-  @apply max-w-7xl mx-auto;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Particle effects */
@@ -108,13 +153,14 @@ body {
 /* Responsive design utilities */
 @media (max-width: 768px) {
   .section-padding {
-    @apply py-12 px-4;
+    padding: 48px 16px;
   }
 }
 
 /* Focus states for accessibility */
 .focus-visible {
-  @apply outline-2 outline-offset-2 outline-primary-500;
+  outline: 2px solid #666666;
+  outline-offset: 2px;
 }
 
 /* Custom animations */

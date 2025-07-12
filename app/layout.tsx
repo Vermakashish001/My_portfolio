@@ -14,16 +14,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-dark-900 text-white antialiased">
+      <body className="bg-black text-white antialiased w-full">
         {children}
         <Toaster
           position="bottom-right"
           toastOptions={{
             duration: 4000,
             style: {
-              background: '#1e293b',
+              background: '#1a1a1a',
               color: '#ffffff',
-              border: '1px solid #0ea5e9',
+              border: '1px solid #333333',
             },
           }}
         />
