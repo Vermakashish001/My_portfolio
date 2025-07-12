@@ -10,18 +10,6 @@ const ParticleBackground = () => {
     await loadSlim(engine)
   }, [])
 
-  // Conditional FPS based on screen size
-  const getFPSLimit = () => {
-    if (typeof window !== 'undefined') {
-      const width = window.innerWidth
-      if (width < 768) return 30        // Mobile: 30 FPS
-      if (width < 1024) return 45       // Tablet: 45 FPS
-      if (width < 1440) return 60       // Desktop: 60 FPS
-      return 120                        // Large Desktop: 120 FPS
-    }
-    return 60 // Default fallback
-  }
-
   return (
     <Particles
       id="tsparticles"
@@ -32,99 +20,65 @@ const ParticleBackground = () => {
             value: 'transparent',
           },
         },
-        fpsLimit: getFPSLimit(),
+        fpsLimit: 120,
         interactivity: {
           events: {
             onClick: {
               enable: true,
-              mode: 'bubble',
+              mode: 'push',
             },
             onHover: {
               enable: true,
-              mode: 'slow',
+              mode: 'repulse',
             },
             resize: true,
           },
           modes: {
-            bubble: {
-              distance: 200,
-              size: 60,
-              duration: 2,
-              opacity: 0.4,
+            push: {
+              quantity: 4,
             },
-            slow: {
-              factor: 3,
-              radius: 200,
+            repulse: {
+              distance: 200,
+              duration: 0.4,
             },
           },
         },
         particles: {
           color: {
-            value: ['#1a1a1a', '#2a2a2a', '#3a3a3a', '#4a4a4a'],
+            value: ['#666666', '#888888', '#aaaaaa'],
           },
           links: {
-            enable: false,
+            color: '#555555',
+            distance: 150,
+            enable: true,
+            opacity: 0.2,
+            width: 1,
           },
           move: {
-            direction: 'top',
+            direction: 'none',
             enable: true,
             outModes: {
-              default: 'out',
+              default: 'bounce',
             },
-            random: true,
+            random: false,
             speed: 1,
             straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 1500,
+              area: 800,
             },
-            value: 40,
+            value: 80,
           },
           opacity: {
-            value: {
-              min: 0.1,
-              max: 0.4,
-            },
-            animation: {
-              enable: true,
-              speed: 2,
-              minimumValue: 0.05,
-            },
+            value: 0.5,
           },
           shape: {
-            type: ['polygon', 'circle', 'triangle'],
-            options: {
-              polygon: {
-                sides: 6,
-              },
-            },
+            type: 'circle',
           },
           size: {
-            value: {
-              min: 20,
-              max: 60,
-            },
-            animation: {
-              enable: true,
-              speed: 3,
-              minimumValue: 10,
-            },
-          },
-          rotate: {
-            value: {
-              min: 0,
-              max: 360,
-            },
-            animation: {
-              enable: true,
-              speed: 2,
-            },
-          },
-          stroke: {
-            width: 1,
-            color: '#333333',
+            value: { min: 1, max: 5 },
           },
         },
         detectRetina: true,
