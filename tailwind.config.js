@@ -61,6 +61,9 @@ module.exports = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Poppins', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
+        'adlery-pro': ['Adlery Pro', 'sans-serif'],
+        'adlery-blockletter': ['Adlery Pro Blockletter', 'sans-serif'],
+        'adlery-swash': ['Adlery Swash', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

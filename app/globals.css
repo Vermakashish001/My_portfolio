@@ -4,9 +4,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Adlery Pro Font */
+@font-face {
+  font-family: 'Adlery Pro';
+  src: url('/fonts/Adlery-Pro-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adlery Pro Blockletter';
+  src: url('/fonts/Adlery-Pro-Blockletter-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adlery Swash';
+  src: url('/fonts/Adlery-Swash-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --font-inter: 'Inter', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
+  --font-adlery-pro: 'Adlery Pro', sans-serif;
+  --font-adlery-blockletter: 'Adlery Pro Blockletter', sans-serif;
+  --font-adlery-swash: 'Adlery Swash', sans-serif;
 }
 
 * {

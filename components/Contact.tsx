@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram, MessageCircle, User, AtSign, FileText } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 
 const Contact = () => {
@@ -49,26 +49,36 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'kashish.854104@gamil.com',
+      href: 'mailto:kashish.verma@example.com',
+      color: 'from-gray-600 to-gray-800',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+91 98765 43210',
+      href: 'tel:+919876543210',
+      color: 'from-gray-600 to-gray-800',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'India',
       href: '#',
+      color: 'from-gray-600 to-gray-800',
     },
+  ]
+
+  const socialLinks = [
+    { name: 'GitHub', icon: Github, href: '#', color: 'from-gray-700 to-gray-900' },
+    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'from-gray-700 to-gray-900' },
+    { name: 'Twitter', icon: Twitter, href: '#', color: 'from-gray-700 to-gray-900' },
+    { name: 'Instagram', icon: Instagram, href: '#', color: 'from-gray-700 to-gray-900' },
   ]
 
   return (
     <section id="contact" className="section-padding">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl ">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -76,67 +86,75 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span className="text-gradient">Touch</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Let&apos;s <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Have a project in mind or want to collaborate? I&apos;d love to hear from you!
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+            Ready to bring your ideas to life? Drop me a message and let&apos;s create something amazing together!
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Let&apos;s Start a Conversation
+            {/* Contact Methods */}
+            <div className="glass-effect p-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <MessageCircle className="w-6 h-6 text-white" />
+                Get In Touch
               </h3>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                I&apos;m always interested in new opportunities and exciting projects.
-                Whether you have a question or just want to say hi, feel free to
-                reach out!
+              <p className="text-gray-400 mb-8">
+                I&apos;m always excited to discuss new opportunities and creative projects. 
+                Let&apos;s connect and build something amazing together!
               </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:bg-primary-500/10 transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-400">{label}</div>
-                    <div className="text-white font-medium">{value}</div>
-                  </div>
-                </motion.a>
-              ))}
+              
+              <div className="space-y-4">
+                {contactInfo.map(({ icon: Icon, label, value, href, color }, index) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ x: 10, scale: 1.02 }}
+                    className="flex items-center space-x-4 p-4 glass-effect rounded-xl hover:scale-105 transition-all duration-300 group"
+                  >
+                    <div className="w-12 h-12  rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300 backdrop-blur-sm flex-shrink-0">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm text-gray-400 font-medium">{label}</div>
+                      <div className="text-white text-xs sm:text-base font-semibold">{value}</div>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
             </div>
 
             {/* Social Links */}
-            <div className="pt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">
-                Follow Me
+            <div className="glass-effect p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-white mb-6">
+                Follow My Journey
               </h4>
-              <div className="flex space-x-4">
-                {['GitHub', 'LinkedIn', 'Twitter', 'Instagram'].map((social) => (
+              <div className="grid grid-cols-2 gap-3">
+                {socialLinks.map(({ name, icon: Icon, href, color }, index) => (
                   <motion.a
-                    key={social}
-                    href="#"
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-500/30 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                    key={name}
+                    href={href}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center justify-center gap-2 p-3 bg-black/40 border border-white/20 rounded-xl text-white font-medium hover:bg-black/60 hover:border-white/30 transition-all duration-300 backdrop-blur-sm"
                   >
-                    {social[0]}
+                    <Icon className="w-4 h-4" />
+                    <span className="text-sm">{name}</span>
                   </motion.a>
                 ))}
               </div>
@@ -148,11 +166,18 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="glass-effect p-6 rounded-xl"
           >
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <Send className="w-6 h-6 text-white" />
+              Send Message
+            </h3>
+            
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                    <User className="w-4 h-4" />
                     Name *
                   </label>
                   <input
@@ -162,13 +187,14 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-300"
-                    placeholder="Your name"
+                    className="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/30 text-white placeholder-gray-400 transition-all duration-300 backdrop-blur-sm"
+                    placeholder="Your full name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                    <AtSign className="w-4 h-4" />
                     Email *
                   </label>
                   <input
@@ -178,14 +204,15 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/30 text-white placeholder-gray-400 transition-all duration-300 backdrop-blur-sm"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="subject" className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                  <FileText className="w-4 h-4" />
                   Subject *
                 </label>
                 <input
@@ -195,13 +222,14 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-300"
-                  placeholder="What's this about?"
+                  className="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/30 text-white placeholder-gray-400 transition-all duration-300 backdrop-blur-sm"
+                  placeholder="What would you like to discuss?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                  <MessageCircle className="w-4 h-4" />
                   Message *
                 </label>
                 <textarea
@@ -211,8 +239,8 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/30 text-white placeholder-gray-400 transition-all duration-300 resize-none backdrop-blur-sm"
+                  placeholder="Tell me about your project or idea..."
                 />
               </div>
 
@@ -221,11 +249,11 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border border-white/20 hover:border-white/30 backdrop-blur-sm"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="loading-spinner w-5 h-5" />
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     <span>Sending...</span>
                   </>
                 ) : (
