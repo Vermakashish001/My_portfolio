@@ -68,7 +68,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-padding">
-      <div className="container-max">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}

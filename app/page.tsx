@@ -3,7 +3,6 @@
 import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
@@ -22,9 +21,8 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="w-full flex flex-col items-center justify-center relative">
+    <main className="w-full">
       <ParticleBackground />
-      <Navbar />
       <Hero />
       <Skills />
       <Projects />

@@ -75,7 +75,7 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="section-padding px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="section-padding">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           ref={ref}

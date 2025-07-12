@@ -198,7 +198,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-padding">
-      <div className="container max-w-[96vw] mx-auto ">
+      <div className="container mx-auto max-w-7xl ">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -225,7 +225,7 @@ const Projects = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="glass-effect p-4 lg:p-6 rounded-xl hover:scale-105 transition-transform duration-300"
+              className="glass-effect p-4 lg:p-6 flex flex-col justify-between  rounded-xl hover:scale-105 transition-transform duration-300"
             >
               <div className="relative mb-4">
                 <img
@@ -306,7 +306,7 @@ const Projects = () => {
             >
               {projects.map((project) => (
                 <div key={project.id} className="w-full flex-shrink-0 px-2 sm:px-4">
-                  <div className="glass-effect p-4 sm:p-6 rounded-xl mx-2 sm:mx-0">
+                  <div className="glass-effect p-4 sm:p-6 rounded-xl mx-2 sm:mx-0 h-full min-h-[360px] sm:min-h-[520px] flex flex-col">
                     <div className="relative mb-3 sm:mb-4">
                       <img
                         src={project.image}
@@ -327,7 +327,7 @@ const Projects = () => {
                       {project.title}
                     </h3>
                     
-                    <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed line-clamp-2 sm:line-clamp-3">
+                    <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed flex-grow">
                       {project.description}
                     </p>
 
@@ -351,7 +351,7 @@ const Projects = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-2 sm:gap-3">
+                    <div className="flex gap-2 sm:gap-3 mt-auto">
                       <motion.a
                         href={project.liveUrl}
                         whileHover={{ scale: 1.05 }}

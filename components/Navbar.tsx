@@ -42,14 +42,30 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-max">
-        <div className="flex items-center justify-between h-16 px-4">
+      <div className="container mx-auto max-w-7xl">
+        <div className="flex items-center justify-between px-4 h-16">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient cursor-pointer"
+            className="text-2xl font-bold cursor-pointer relative"
           >
-            Portfolio
+            <span 
+              className="text-white tracking-[0.2em] font-bold"
+              style={{ 
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '700',
+                textTransform: 'uppercase'
+              }}
+            >
+              KASHISH
+            </span>
+            {/* Subtle underline */}
+            <motion.div
+              className="absolute -bottom-1 left-0 h-0.5 bg-white rounded-full"
+              initial={{ width: 0 }}
+              whileHover={{ width: '100%' }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
           </motion.div>
 
           {/* Desktop Navigation */}

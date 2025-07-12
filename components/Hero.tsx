@@ -14,9 +14,9 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-16 sm:py-0 px-4 sm:px-6 lg:px-8">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -36,7 +36,7 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6 sm:mb-8 h-12 sm:h-16">
+            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 sm:mb-8 h-12 sm:h-16">
               <TypeAnimation
                 sequence={[
                   'Full Stack Developer',
@@ -78,7 +78,7 @@ const Hero = () => {
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3"
+                className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2"
               >
                 <Download size={20} />
                 <span>Download CV</span>
@@ -105,7 +105,7 @@ const Hero = () => {
                   className="text-gray-400 hover:text-gray-200 transition-colors duration-200 p-2"
                   aria-label={label}
                 >
-                  <Icon size={24} />
+                  <Icon size={20} />
                 </motion.a>
               ))}
             </motion.div>
@@ -134,7 +134,7 @@ const Hero = () => {
                   <div className="w-full h-full rounded-full bg-black" />
                 </motion.div>
                 
-                <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96  rounded-full overflow-hidden glass-effect">
+                <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96  rounded-full overflow-hidden glass-effect">
                   <img
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                     alt="Profile"
