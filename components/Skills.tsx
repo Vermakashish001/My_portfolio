@@ -75,19 +75,19 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="section-padding">
-      <div className="container-max">
+    <section id="skills" className="section-padding px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             My <span className="text-gradient">Skills</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             Technologies and tools I use to bring ideas to life
           </p>
         </motion.div>
@@ -96,20 +96,20 @@ const Skills = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {skillCategories.map(({ title, icon: Icon, technologies }, categoryIndex) => (
             <motion.div
               key={title}
               variants={itemVariants}
-              className="glass-effect p-6 rounded-xl hover:scale-105 transition-transform duration-300"
+              className="glass-effect p-4 sm:p-6 rounded-xl hover:scale-105 transition-transform duration-300"
             >
-              <div className="flex items-center mb-6">
-                <Icon className="w-8 h-8 text-white mr-3" />
-                <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <div className="flex items-center mb-4 sm:mb-6">
+                <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white mr-2 sm:mr-3" />
+                <h3 className="text-lg sm:text-xl font-semibold text-white">{title}</h3>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {technologies.map((tech, techIndex) => (
                   <motion.span
                     key={tech.name}
@@ -122,16 +122,16 @@ const Skills = () => {
                       stiffness: 100
                     }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="px-4 py-2 bg-black/40 border border-white/20 rounded-full text-sm font-medium text-white/80 hover:text-white hover:bg-black/60 hover:border-white/30 transition-all duration-200 cursor-default backdrop-blur-sm flex items-center gap-2"
+                    className="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-black/40 border border-white/20 rounded-full text-xs sm:text-sm font-medium text-white/80 hover:text-white hover:bg-black/60 hover:border-white/30 transition-all duration-200 cursor-default backdrop-blur-sm flex items-center gap-1 sm:gap-2"
                   >
                     <Image
                       src={tech.icon}
                       alt={tech.name}
                       width={16}
                       height={16}
-                      className="w-4 h-4"
+                      className="w-3 h-3 sm:w-4 sm:h-4"
                     />
-                    {tech.name}
+                    <span className="whitespace-nowrap">{tech.name}</span>
                   </motion.span>
                 ))}
               </div>

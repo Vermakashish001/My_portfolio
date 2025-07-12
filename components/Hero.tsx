@@ -30,7 +30,7 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
             >
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="text-gradient">
                 Kashish
               </span>
@@ -62,7 +62,7 @@ const Hero = () => {
               className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               I create beautiful, responsive, and user-friendly web applications
-              with modern technologies. Let's build something amazing together!
+              with modern technologies. Let&apos;s build something amazing together!
             </motion.p>
 
             {/* Action Buttons */}
