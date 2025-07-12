@@ -1,14 +1,13 @@
-'use client'
-
-import { useCallback } from 'react'
-import Particles from 'react-particles'
-import { loadSlim } from 'tsparticles-slim'
-import type { Engine } from 'tsparticles-engine'
+"use client";
+import { useCallback } from 'react';
+import Particles from 'react-particles';
+import { loadSlim } from 'tsparticles-slim';
+import type { Engine } from 'tsparticles-engine';
 
 const ParticleBackground = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine)
-  }, [])
+    await loadSlim(engine);
+  }, []);
 
   return (
     <Particles
@@ -17,7 +16,7 @@ const ParticleBackground = () => {
       options={{
         background: {
           color: {
-            value: 'transparent',
+            value: "transparent",
           },
         },
         fpsLimit: 120,
@@ -25,11 +24,11 @@ const ParticleBackground = () => {
           events: {
             onClick: {
               enable: true,
-              mode: 'push',
+              mode: "push",
             },
             onHover: {
               enable: true,
-              mode: 'repulse',
+              mode: "repulse",
             },
             resize: true,
           },
@@ -45,20 +44,23 @@ const ParticleBackground = () => {
         },
         particles: {
           color: {
-            value: ['#666666', '#888888', '#aaaaaa'],
+            value: "#ffffff",
           },
           links: {
-            color: '#555555',
+            color: "#ffffff",
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.3,
             width: 1,
           },
+          collisions: {
+            enable: true,
+          },
           move: {
-            direction: 'none',
+            direction: "none",
             enable: true,
             outModes: {
-              default: 'bounce',
+              default: "bounce",
             },
             random: false,
             speed: 1,
@@ -75,7 +77,7 @@ const ParticleBackground = () => {
             value: 0.5,
           },
           shape: {
-            type: 'circle',
+            type: "circle",
           },
           size: {
             value: { min: 1, max: 5 },
@@ -83,8 +85,9 @@ const ParticleBackground = () => {
         },
         detectRetina: true,
       }}
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
     />
-  )
-}
+  );
+};
 
-export default ParticleBackground
+export default ParticleBackground;

@@ -127,35 +127,13 @@ const Hero = () => {
               transitionSpeed={2500}
               className="rounded-full"
             >
-              <div className="relative">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 p-1"
-                >
-                  <div className="w-full h-full rounded-full bg-black" />
-                </motion.div>
-                
-                <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96  rounded-full overflow-hidden glass-effect">
+                <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96  rounded-full overflow-hidden">
                     <Image
                         src={ProfileImage}
                         alt="Profile"
                         className="w-full h-full object-cover"
                     />
                 </div>
-
-                {/* Floating Elements */}
-                <motion.div
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-gray-600 to-gray-500 rounded-full opacity-20 blur-xl"
-                />
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-gray-500 to-gray-400 rounded-full opacity-30 blur-lg"
-                />
-              </div>
             </Tilt>
           </motion.div>
         </div>
