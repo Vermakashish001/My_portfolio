@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram, MessageCircle, User, AtSign, FileText } from 'lucide-react'
 import { toast } from 'react-hot-toast'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -33,12 +34,31 @@ const Contact = () => {
     setIsSubmitting(true)
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      toast.success('Message sent successfully! I\'ll get back to you soon.')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      // Initialize EmailJS with your public key
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!)
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'kashish854104@gmail.com',
+      }
+
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams
+      )
+
+      if (result.status === 200) {
+        toast.success('Message sent successfully! I\'ll get back to you soon.')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        toast.error('Failed to send message. Please try again.')
+      }
     } catch (error) {
+      console.error('Error sending email:', error)
       toast.error('Failed to send message. Please try again.')
     } finally {
       setIsSubmitting(false)
@@ -49,22 +69,22 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'kashish.854104@gamil.com',
-      href: 'mailto:kashish.verma@example.com',
+      value: 'kashish.854104@gmail.com',
+      href: 'mailto:kashish.854104@gmail.com',
       color: 'from-gray-600 to-gray-800',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
+      value: '+91 62071 07305',
       href: 'tel:+919876543210',
       color: 'from-gray-600 to-gray-800',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'India',
-      href: '#',
+      value: 'Katihar, Bihar, India',
+      href: 'https://www.google.com/maps/dir/17.4001517,78.3838089/Katihar,+Bihar/@21.4270718,77.5869719,6z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0x39faa98e3815bc69:0x7415bf2c57ddfb17!2m2!1d87.5591073!2d25.5540648!3e0?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D',
       color: 'from-gray-600 to-gray-800',
     },
   ]

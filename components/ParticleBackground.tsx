@@ -108,7 +108,7 @@ const ParticleBackground = () => {
             },
             rate: {
               quantity: 1,
-              delay: 3, // New comet every 3 seconds
+              delay: 2, // New comet every 2 seconds (faster)
             },
             shape: 'square',
             startCount: 0,
@@ -129,7 +129,7 @@ const ParticleBackground = () => {
             },
             particles: {
               color: {
-                value: ['#ffdd44', '#ffaa44', '#ff8844', '#ffffff'],
+                value: '#ffffff', // Pure white for better visibility
               },
               links: {
                 enable: false,
@@ -142,15 +142,15 @@ const ParticleBackground = () => {
                 direction: 'bottom-right',
                 enable: true,
                 speed: {
-                  min: 5,
-                  max: 15,
+                  min: 8,
+                  max: 20, // Faster speed
                 },
                 outModes: {
                   default: 'destroy',
                 },
                 trail: {
                   enable: true,
-                  length: 20,
+                  length: 30, // Longer trail
                   fillColor: {
                     value: '#000000',
                   },
@@ -161,12 +161,12 @@ const ParticleBackground = () => {
               },
               opacity: {
                 value: {
-                  min: 0.5,
+                  min: 0.8,
                   max: 1,
                 },
                 animation: {
                   enable: true,
-                  speed: 2,
+                  speed: 1,
                   minimumValue: 0,
                   destroy: 'min',
                 },
@@ -176,16 +176,16 @@ const ParticleBackground = () => {
               },
               size: {
                 value: {
-                  min: 2,
-                  max: 4,
+                  min: 3,
+                  max: 6, // Larger size for visibility
                 },
               },
               life: {
                 duration: {
                   sync: false,
                   value: {
-                    min: 3,
-                    max: 7,
+                    min: 2,
+                    max: 5, // Shorter duration for more frequent comets
                   },
                 },
                 count: 1,

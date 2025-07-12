@@ -76,8 +76,8 @@ const Hero = () => {
             >
 
               <motion.a
-                href="/resume.pdf"
-                download
+                href="/assets/files/kashishAts.pdf"
+                download="Kashish_CV.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2"
@@ -95,9 +95,9 @@ const Hero = () => {
               className="flex gap-4 justify-center lg:justify-start"
             >
               {[
-                { icon: Github, href: '#', label: 'GitHub' },
-                { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+                { icon: Github, href: 'https://github.com/Vermakashish001', label: 'GitHub' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/vermakashish001/', label: 'LinkedIn' },
+                { icon: Mail, href: 'mailto:kashish854104@gmail.com', label: 'Email' },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
