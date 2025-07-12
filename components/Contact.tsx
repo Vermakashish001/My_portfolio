@@ -77,7 +77,7 @@ const Contact = () => {
       icon: Phone,
       label: 'Phone',
       value: '+91 62071 07305',
-      href: 'tel:+919876543210',
+      href: 'tel:+916207107305',
       color: 'from-gray-600 to-gray-800',
     },
     {
