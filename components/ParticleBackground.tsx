@@ -20,179 +20,100 @@ const ParticleBackground = () => {
             value: 'transparent',
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 60, // Reduced from 120 for better mobile performance
         interactivity: {
           events: {
             onClick: {
               enable: true,
-              mode: 'push',
+              mode: 'repulse',
             },
             onHover: {
               enable: true,
-              mode: 'bubble',
+              mode: 'grab',
             },
             resize: true,
           },
           modes: {
-            push: {
-              quantity: 3,
-            },
-            bubble: {
+            repulse: {
               distance: 200,
-              size: 8,
-              duration: 2,
-              opacity: 0.8,
+              duration: 0.4,
+            },
+            grab: {
+              distance: 150,
+              links: {
+                opacity: 0.2,
+              },
             },
           },
         },
         particles: {
           color: {
-            value: ['#ffffff', '#f0f0f0', '#e0e0e0', '#d0d0d0'],
+            value: ['#333333', '#444444', '#555555', '#666666', '#777777'],
           },
           links: {
-            enable: false, // Disable links for star effect
+            enable: false,
           },
           move: {
             direction: 'none',
             enable: true,
             outModes: {
-              default: 'out',
+              default: 'bounce',
             },
             random: true,
             speed: {
-              min: 0.1,
-              max: 0.5,
+              min: 0.5,
+              max: 2,
             },
             straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 1000,
+              area: 1500,
             },
-            value: 150, // More particles for dense starfield
+            value: 25, // Fewer, larger geometric shapes
           },
           opacity: {
             value: {
-              min: 0.3,
-              max: 1,
+              min: 0.2,
+              max: 0.5,
             },
             animation: {
               enable: true,
-              speed: 0.5,
+              speed: 0.8,
               minimumValue: 0.1,
             },
           },
           shape: {
-            type: 'circle',
+            type: ['circle', 'triangle', 'polygon'],
+            options: {
+              polygon: {
+                sides: 6,
+              },
+            },
           },
           size: {
             value: {
-              min: 0.5,
-              max: 2.5,
+              min: 20,
+              max: 80,
             },
             animation: {
               enable: true,
-              speed: 1,
-              minimumValue: 0.1,
+              speed: 2,
+              minimumValue: 10,
+            },
+          },
+          rotate: {
+            value: {
+              min: 0,
+              max: 360,
+            },
+            animation: {
+              enable: true,
+              speed: 5,
             },
           },
         },
-        // Add falling comets as a second emitter
-        emitters: [
-          {
-            autoPlay: true,
-            fill: true,
-            life: {
-              wait: false,
-            },
-            rate: {
-              quantity: 1,
-              delay: 2, // New comet every 2 seconds (faster)
-            },
-            shape: 'square',
-            startCount: 0,
-            size: {
-              mode: 'percent',
-              height: 0,
-              width: 0,
-            },
-            position: {
-              x: {
-                random: true,
-                value: 0,
-              },
-              y: {
-                random: false,
-                value: 0,
-              },
-            },
-            particles: {
-              color: {
-                value: '#ffffff', // Pure white for better visibility
-              },
-              links: {
-                enable: false,
-              },
-              move: {
-                angle: {
-                  offset: 45,
-                  value: 135,
-                },
-                direction: 'bottom-right',
-                enable: true,
-                speed: {
-                  min: 8,
-                  max: 20, // Faster speed
-                },
-                outModes: {
-                  default: 'destroy',
-                },
-                trail: {
-                  enable: true,
-                  length: 30, // Longer trail
-                  fillColor: {
-                    value: '#000000',
-                  },
-                },
-              },
-              number: {
-                value: 1,
-              },
-              opacity: {
-                value: {
-                  min: 0.8,
-                  max: 1,
-                },
-                animation: {
-                  enable: true,
-                  speed: 1,
-                  minimumValue: 0,
-                  destroy: 'min',
-                },
-              },
-              shape: {
-                type: 'circle',
-              },
-              size: {
-                value: {
-                  min: 3,
-                  max: 6, // Larger size for visibility
-                },
-              },
-              life: {
-                duration: {
-                  sync: false,
-                  value: {
-                    min: 2,
-                    max: 5, // Shorter duration for more frequent comets
-                  },
-                },
-                count: 1,
-              },
-            },
-          },
-        ],
         detectRetina: true,
       }}
     />
