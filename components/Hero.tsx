@@ -3,7 +3,9 @@
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react'
+import ProfileImage from '@/public/assets/images/profile.png'
 import Tilt from 'react-parallax-tilt'
+import Image from 'next/image'
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -135,11 +137,11 @@ const Hero = () => {
                 </motion.div>
                 
                 <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96  rounded-full overflow-hidden glass-effect">
-                  <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    alt="Profile"
-                    className="w-full h-full object-cover"
-                  />
+                    <Image
+                        src={ProfileImage}
+                        alt="Profile"
+                        className="w-full h-full object-cover"
+                    />
                 </div>
 
                 {/* Floating Elements */}
