@@ -16,94 +16,52 @@ const Projects = () => {
     triggerOnce: true,
   })
 
-  const projects = [
+const projects = [
     {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform built with Next.js, Stripe payments, and MongoDB. Features include user authentication, cart management, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      technologies: [
-        { name: 'Next.js', icon: '/assets/icons/nextjs-svgrepo-com.svg' },
-        { name: 'TypeScript', icon: '/assets/icons/typescript-official-svgrepo-com.svg' },
-        { name: 'MongoDB', icon: '/assets/icons/mongo-svgrepo-com.svg' },
-        { name: 'Tailwind CSS', icon: '/assets/icons/tailwind-svgrepo-com.svg' }
-      ],
-      category: 'Full Stack',
-      liveUrl: '#',
-      githubUrl: '#',
+        id: 1,
+        title: 'ReVibe',
+        description: 'An AI-powered mental health platform featuring intelligent insights, mood tracking with personalized scoring, and comprehensive resources for mental wellness support.',
+        image: '../assets/images/revibe.png',
+        technologies: [
+            { name: 'Next.js', icon: '/assets/icons/nextjs-svgrepo-com.svg' },
+            { name: 'TypeScript', icon: '/assets/icons/typescript-official-svgrepo-com.svg' },
+            { name: 'MongoDB', icon: '/assets/icons/mongo-svgrepo-com.svg' },
+            { name: 'Tailwind CSS', icon: '/assets/icons/tailwind-svgrepo-com.svg' }
+        ],
+        category: 'Full Stack',
+        liveUrl: 'https://revibe-wine.vercel.app/',
+        githubUrl: 'https://github.com/Vermakashish001/revibe',
     },
+     {
+        id: 2,
+        title: 'Portfolio Website',
+        description: 'A contemporary, mobile-first portfolio showcasing fluid animations, adaptive dark mode functionality, and superior performance optimization.',
+        image: '../../assets/images/portfolio.png',
+        technologies: [
+            { name: 'Next.js', icon: '/assets/icons/nextjs-svgrepo-com.svg' },
+            { name: 'Tailwind CSS', icon: '/assets/icons/tailwind-svgrepo-com.svg' },
+            { name: 'TypeScript', icon: '/assets/icons/typescript-official-svgrepo-com.svg' }
+        ],
+        category: 'Frontend',
+        liveUrl: 'https://kashishverma.vercel.app/',
+        githubUrl: 'https://github.com/Vermakashish001/My_portfolio',
+    },
+    
     {
-      id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      technologies: [
-        { name: 'React', icon: '/assets/icons/react-svgrepo-com.svg' },
-        { name: 'Node.js', icon: '/assets/icons/nodejs-icon-svgrepo-com.svg' },
-        { name: 'MySQL', icon: '/assets/icons/mysql-svgrepo-com.svg' },
-        { name: 'Express.js', icon: '/assets/icons/express-svgrepo-com.svg' }
-      ],
-      category: 'Web App',
-      liveUrl: '#',
-      githubUrl: '#',
+        id: 3,
+        title: 'MovieMaven',
+        description: 'An interactive movie discovery platform featuring real-time search, personalized recommendations, and a sleek, responsive design.',
+        image: '../../assets/images/moviemaven.png',
+        technologies: [
+            { name: 'React', icon: '/assets/icons/react-svgrepo-com.svg' },
+            { name: 'JavaScript', icon: '/assets/icons/js-svgrepo-com.svg' },
+            { name: 'CSS3', icon: '/assets/icons/css-3-svgrepo-com.svg' }
+        ],
+        category: 'Frontend',
+        liveUrl: 'https://pep-movie-hub.vercel.app/',
+        githubUrl: 'https://github.com/Vermakashish001/PEP_MovieHub',
     },
-    {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      technologies: [
-        { name: 'React', icon: '/assets/icons/react-svgrepo-com.svg' },
-        { name: 'JavaScript', icon: '/assets/icons/js-svgrepo-com.svg' },
-        { name: 'CSS3', icon: '/assets/icons/css-3-svgrepo-com.svg' }
-      ],
-      category: 'Frontend',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      id: 4,
-      title: 'Social Media API',
-      description: 'RESTful API for a social media platform with user authentication, post management, and real-time notifications.',
-      image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      technologies: [
-        { name: 'Node.js', icon: '/assets/icons/nodejs-icon-svgrepo-com.svg' },
-        { name: 'Express.js', icon: '/assets/icons/express-svgrepo-com.svg' },
-        { name: 'MongoDB', icon: '/assets/icons/mongo-svgrepo-com.svg' }
-      ],
-      category: 'Backend',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      id: 5,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website with smooth animations, dark mode, and optimized performance.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      technologies: [
-        { name: 'Next.js', icon: '/assets/icons/nextjs-svgrepo-com.svg' },
-        { name: 'Tailwind CSS', icon: '/assets/icons/tailwind-svgrepo-com.svg' },
-        { name: 'TypeScript', icon: '/assets/icons/typescript-official-svgrepo-com.svg' }
-      ],
-      category: 'Frontend',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      id: 6,
-      title: 'Learning Management System',
-      description: 'A comprehensive LMS with course management, progress tracking, and interactive learning modules.',
-      image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      technologies: [
-        { name: 'React', icon: '/assets/icons/react-svgrepo-com.svg' },
-        { name: 'Node.js', icon: '/assets/icons/nodejs-icon-svgrepo-com.svg' },
-        { name: 'MySQL', icon: '/assets/icons/mysql-svgrepo-com.svg' }
-      ],
-      category: 'Full Stack',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-  ]
+]
 
   // Auto-rotation effect
   useEffect(() => {
@@ -354,6 +312,8 @@ const Projects = () => {
                     <div className="flex gap-2 sm:gap-3 mt-auto">
                       <motion.a
                         href={project.liveUrl}
+                        target='_blank'
+                        rel="noopener"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg flex items-center justify-center gap-1.5 sm:gap-2 transition-all duration-200 text-xs sm:text-sm"
@@ -364,6 +324,7 @@ const Projects = () => {
                       
                       <motion.a
                         href={project.githubUrl}
+                        target='_blank'
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg flex items-center justify-center gap-1.5 sm:gap-2 transition-all duration-200 text-xs sm:text-sm"

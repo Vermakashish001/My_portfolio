@@ -10,6 +10,18 @@ const ParticleBackground = () => {
     await loadSlim(engine)
   }, [])
 
+  // Conditional FPS based on screen size
+  const getFPSLimit = () => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth
+      if (width < 768) return 30        // Mobile: 30 FPS
+      if (width < 1024) return 45       // Tablet: 45 FPS
+      if (width < 1440) return 60       // Desktop: 60 FPS
+      return 120                        // Large Desktop: 120 FPS
+    }
+    return 60 // Default fallback
+  }
+
   return (
     <Particles
       id="tsparticles"
@@ -20,12 +32,12 @@ const ParticleBackground = () => {
             value: 'transparent',
           },
         },
-        fpsLimit: 60, // Reduced from 120 for better mobile performance
+        fpsLimit: getFPSLimit(),
         interactivity: {
           events: {
             onClick: {
               enable: true,
-              mode: 'repulse',
+              mode: 'push',
             },
             onHover: {
               enable: true,
@@ -34,24 +46,28 @@ const ParticleBackground = () => {
             resize: true,
           },
           modes: {
-            repulse: {
-              distance: 200,
-              duration: 0.4,
+            push: {
+              quantity: 2,
             },
             grab: {
-              distance: 150,
+              distance: 200,
               links: {
-                opacity: 0.2,
+                opacity: 0.6,
+                color: '#ffffff',
               },
             },
           },
         },
         particles: {
           color: {
-            value: ['#333333', '#444444', '#555555', '#666666', '#777777'],
+            value: '#ffffff',
           },
           links: {
-            enable: false,
+            enable: true,
+            distance: 150,
+            color: '#666666',
+            opacity: 0.25,
+            width: 1.5,
           },
           move: {
             direction: 'none',
@@ -59,58 +75,40 @@ const ParticleBackground = () => {
             outModes: {
               default: 'bounce',
             },
-            random: true,
-            speed: {
-              min: 0.5,
-              max: 2,
-            },
+            random: false,
+            speed: 0.3,
             straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 1500,
+              area: 800,
             },
-            value: 25, // Fewer, larger geometric shapes
+            value: 100,
           },
           opacity: {
             value: {
-              min: 0.2,
-              max: 0.5,
+              min: 0.3,
+              max: 0.7,
             },
             animation: {
               enable: true,
-              speed: 0.8,
+              speed: 1,
               minimumValue: 0.1,
             },
           },
           shape: {
-            type: ['circle', 'triangle', 'polygon'],
-            options: {
-              polygon: {
-                sides: 6,
-              },
-            },
+            type: 'circle',
           },
           size: {
             value: {
-              min: 20,
-              max: 80,
+              min: 1,
+              max: 3,
             },
             animation: {
               enable: true,
               speed: 2,
-              minimumValue: 10,
-            },
-          },
-          rotate: {
-            value: {
-              min: 0,
-              max: 360,
-            },
-            animation: {
-              enable: true,
-              speed: 5,
+              minimumValue: 0.5,
             },
           },
         },

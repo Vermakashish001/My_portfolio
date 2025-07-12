@@ -90,10 +90,9 @@ const Contact = () => {
   ]
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: '#', color: 'from-gray-700 to-gray-900' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'from-gray-700 to-gray-900' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'from-gray-700 to-gray-900' },
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'from-gray-700 to-gray-900' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/Vermakashish001', color: 'from-gray-700 to-gray-900' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/vermakashish001/', color: 'from-gray-700 to-gray-900' },
+   
   ]
 
   return (

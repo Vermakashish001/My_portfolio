@@ -51,6 +51,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden; /* Prevent horizontal scroll */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #333333 transparent; /* For Firefox */
 }
 
 body {
@@ -65,22 +67,40 @@ body {
   width: 100%;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - only visible when needed */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #333333, #666666);
-  border-radius: 4px;
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.3s ease;
 }
 
+/* Show scrollbar on hover or when scrolling */
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #444444, #777777);
+}
+
+body:hover ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #333333, #666666);
+}
+
+/* Hide scrollbar completely on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 /* Animation classes */
