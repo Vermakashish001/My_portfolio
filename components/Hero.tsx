@@ -16,7 +16,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 my-auto section-padding md:min-h-screen">
+    <section id="home" className="flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 mt-[3rem] sm:mt-0 section-padding md:min-h-screen">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 lg:gap-16 items-center">
           {/* Text Content */}
