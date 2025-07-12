@@ -1,14 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, Github, Smartphone, Globe, Database, Code, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ExternalLink, Github, Smartphone, Globe, Database, Code, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import Tilt from 'react-parallax-tilt'
 import Image from 'next/image'
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [progress, setProgress] = useState(0)
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -103,12 +105,59 @@ const Projects = () => {
     },
   ]
 
+  // Auto-rotation effect
+  useEffect(() => {
+    if (!isAutoPlaying || !inView) {
+      setProgress(0)
+      return
+    }
+
+    const duration = 4000 // 4 seconds
+    const intervalTime = 50 // Update progress every 50ms
+    let elapsed = 0
+
+    const progressInterval = setInterval(() => {
+      elapsed += intervalTime
+      const newProgress = (elapsed / duration) * 100
+      setProgress(newProgress)
+
+      if (elapsed >= duration) {
+        setCurrentIndex((prev) => (prev + 1) % projects.length)
+        elapsed = 0
+        setProgress(0)
+      }
+    }, intervalTime)
+
+    return () => clearInterval(progressInterval)
+  }, [isAutoPlaying, inView, projects.length, currentIndex])
+
+  // Reset progress when manually navigating
+  const resetProgress = () => {
+    setProgress(0)
+  }
+
+  // Pause auto-play when user interacts
+  const handleManualNavigation = () => {
+    setIsAutoPlaying(false)
+    resetProgress()
+    // Resume auto-play after 5 seconds of no interaction
+    setTimeout(() => {
+      setIsAutoPlaying(true)
+    }, 5000)
+  }
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % projects.length)
+    handleManualNavigation()
   }
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length)
+    handleManualNavigation()
+  }
+
+  const toggleAutoPlay = () => {
+    setIsAutoPlaying(!isAutoPlaying)
   }
 
   const getCategoryIcon = (category: string) => {
@@ -329,6 +378,18 @@ const Projects = () => {
             </motion.div>
           </div>
 
+          {/* Auto-rotation Progress Bar */}
+          {isAutoPlaying && (
+            <div className="mt-2 w-full bg-white/10 rounded-full h-1 overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-gray-500 to-gray-300 rounded-full"
+                initial={{ width: '0%' }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.1, ease: 'linear' }}
+              />
+            </div>
+          )}
+
           {/* Carousel Controls */}
           <div className="flex justify-between items-center mt-4 sm:mt-6 px-4 sm:px-0">
             <motion.button
@@ -340,18 +401,39 @@ const Projects = () => {
               <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
             </motion.button>
 
-            {/* Dots Indicator */}
-            <div className="flex gap-1.5 sm:gap-2">
-              {projects.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-200 ${
-                    index === currentIndex ? 'bg-white' : 'bg-white/30'
-                  }`}
-                />
-              ))}
+            {/* Center Controls */}
+            <div className="flex items-center gap-3 sm:gap-4">
+              {/* Auto-play Toggle */}
+              <motion.button
+                onClick={toggleAutoPlay}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`p-2 rounded-full text-white transition-all duration-200 ${
+                  isAutoPlaying 
+                    ? 'bg-green-500/20 hover:bg-green-500/30 border border-green-500/40' 
+                    : 'bg-white/10 hover:bg-white/20'
+                }`}
+                title={isAutoPlaying ? 'Pause auto-rotation' : 'Start auto-rotation'}
+              >
+                {isAutoPlaying ? <Pause size={16} /> : <Play size={16} />}
+              </motion.button>
+
+              {/* Dots Indicator */}
+              <div className="flex gap-1.5 sm:gap-2">
+                {projects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setCurrentIndex(index)
+                      handleManualNavigation() // Use the new function instead of directly setting state
+                    }}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-200 ${
+                      index === currentIndex ? 'bg-white' : 'bg-white/30'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
             <motion.button
