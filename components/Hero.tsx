@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-7xl mb-[60px]">
+      <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div
